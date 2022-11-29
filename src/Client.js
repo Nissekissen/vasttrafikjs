@@ -1,4 +1,8 @@
 import fetch from 'node-fetch'
+import APIType from './types/APIType.js';
+import Geography from './types/Geography.js';
+import StopArea from './types/StopArea.js';
+import StopPoint from './types/StopPoint.js';
 import Token from './types/Token.js';
 import Request from './utils/Request.js';
 
@@ -17,13 +21,17 @@ export default class Client {
         return token;
     }
     async getStopPointById(id) {
-        const request = new Request(this.token, 'GET', 'geo/v2', 'StopPoints/' + id, {}, {});
+        const request = new Request(this.token, 'GET', APIType.Geography, Geography.StopPoints + id, {}, {});
         const response = await request.getResponse();
-        return await response.text();
+        const jsonData = await response.json();
+
+        return new StopPoint(this, jsonData.stopPoint);
     }
     async getStopAreaById(id) {
-        const request = new Request(this.token, 'GET', 'geo/v2', 'StopAreas/' + id, {}, {})
+        const request = new Request(this.token, 'GET', APIType.Geography, Geography.StopAreas + id, {"includeStopPoints": true}, {})
         const response = await request.getResponse();
-        return await response.text();
+        const jsonData = await response.json();
+
+        return new StopArea(jsonData.stopArea);
     }
 }

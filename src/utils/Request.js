@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import RequestError from '../errors/RequestError.js';
 import paramUtils from './params.js'
 
 
@@ -25,6 +26,9 @@ export default class Request {
             method: this.method,
             headers: this.headers
         })
+        if (this.response.status != 200) {
+            throw new RequestError(await this.response.text());
+        }
         return this.response;
     }
 }
