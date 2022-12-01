@@ -1,8 +1,7 @@
-export default class StopArea {
-    constructor(options) {
-        const entries = Object.entries(options)
-        for (const option of entries) {
-            this[option[0]] = option[1]
-        }
+import StopBase from "./base/StopBase.js"
+
+export default class StopArea extends StopBase {
+    constructor(client, options) {
+        super(client, options);
     }
 }

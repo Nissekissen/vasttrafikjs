@@ -12,10 +12,8 @@ const paramsObjectToString = (data) => {
         }
         params = `${params}?${entry[0]}=${entry[1]}`;
     }
-    console.log(typeof params)
     return params;
 }
 
-console.log(paramsObjectToString({test: "test"}))
 
 export default { paramsObjectToString }
