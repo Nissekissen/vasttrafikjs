@@ -1,8 +1,7 @@
-export default class Departure {
+import Base from "./base/Base.js";
+
+export default class Departure extends Base {
     constructor(options) {
-        const entries = Object.entries(options);
-        for (const option of entries) {
-            this[option[0]] = option[1];
-        }
+        super(options);
     }
 }

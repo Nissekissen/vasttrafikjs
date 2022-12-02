@@ -16,6 +16,7 @@ export default class Request {
     constructor(token, method, api, option, paramsObject, headers) {
         let params = paramUtils.paramsObjectToString(paramsObject)
         this.url = `https://api.vasttrafik.se/${api}/${option}${params}`
+        console.log(this.url);
         this.method = method
         this.headers = headers
         this.headers['Authorization'] = `${token.token_type} ${token.access_token}`
