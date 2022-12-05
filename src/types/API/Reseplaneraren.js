@@ -1,3 +1,6 @@
+/**
+ * The different options for the Reseplaneraren API.
+ */
 export default {
     arrivalBoard: 'arrivalBoard',
     departureBoard: 'departureBoard',

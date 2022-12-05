@@ -1,3 +1,6 @@
+/**
+ * The different options for the Geography API.
+ */
 export default {
     CommuterParkingAreas: 'CommuterParkinAreas/',
     CommuterParkingLots: 'CommuterParkingLots/',

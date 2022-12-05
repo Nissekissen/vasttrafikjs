@@ -1,3 +1,9 @@
+/**
+ * Converts an object to a parametars string.
+ * 
+ * @param {Object} data The object you want to convert.
+ * @returns The object into a string.
+ */
 const paramsObjectToString = (data) => {
 
     const entries = Object.entries(data);

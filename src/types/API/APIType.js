@@ -1,3 +1,6 @@
+/**
+ * The different APIs.
+ */
 export default {
     Geography: 'geo/v2',
     Reseplaneraren: 'bin/rest.exe/v2',

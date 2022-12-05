@@ -10,6 +10,12 @@ export default class StopBase extends Base {
         super(options);
         this.client = client;
     }
+    /**
+     * Get the departureboard of this Stop. 
+     * 
+     * @param {Date} date The selected date. If not specified, current time is used.
+     * @returns a new DepartureBoard.
+     */
     async getDepartureBoard(date) {
         if (!date) date = new Date();
         const dateString = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
@@ -20,6 +26,12 @@ export default class StopBase extends Base {
         this.departureBoard = jsonData.DepartureBoard
         return new DepartureBoard(this.client, jsonData.DepartureBoard);
     }
+    /**
+     * Get the ArrivalBoard of this Stop.
+     * 
+     * @param {Date} date The selected date. If not specified, current time is used.
+     * @returns a new ArrivalBoard.
+     */
     async getArrivalBoard(date) {
         if (!date) date = new Date();
         const dateString = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
