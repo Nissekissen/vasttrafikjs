@@ -1,10 +1,11 @@
 import fetch from 'node-fetch';
 import RequestError from '../errors/RequestError.js';
+import RequestBase from '../types/base/RequestBase.js';
 import paramUtils from './params.js'
 
 
 
-export default class Request {
+export default class Request extends RequestBase {
     /**
      * 
      * @param {string} token Access token 
@@ -15,20 +16,8 @@ export default class Request {
      */
     constructor(token, method, api, option, paramsObject, headers) {
         let params = paramUtils.paramsObjectToString(paramsObject)
-        this.url = `https://api.vasttrafik.se/${api}/${option}${params}`
-        console.log(this.url);
-        this.method = method
-        this.headers = headers
-        this.headers['Authorization'] = `${token.token_type} ${token.access_token}`
-    }
-    async getResponse() {
-        this.response = await fetch(this.url, {
-            method: this.method,
-            headers: this.headers
-        })
-        if (this.response.status != 200) {
-            throw new RequestError(await this.response.text());
-        }
-        return this.response;
+        let url = `https://api.vasttrafik.se/${api}/${option}${params}`;
+        headers['Authorization'] = `${token.token_type} ${token.access_token}`
+        super(token, method, url, headers);
     }
 }
