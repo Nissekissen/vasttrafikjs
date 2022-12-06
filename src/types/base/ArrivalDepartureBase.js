@@ -1,10 +1,7 @@
-import Base from "./Base.js";
-import Request from "../../utils/Request.js";
-import APIType from "../API/APIType.js";
-import Reseplaneraren from "../API/Reseplaneraren.js";
-import RawRequest from "../../utils/RawRequest.js";
+const Base = require('./Base');
+const RawRequest = require('../../utils/RawRequest');
 
-export default class ArrivalDepartureBase extends Base {
+module.exports = class ArrivalDepartureBase extends Base {
     constructor(client, options) {
         super(options);
         this.client = client;

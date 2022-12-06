@@ -22,4 +22,4 @@ const paramsObjectToString = (data) => {
 }
 
 
-export default { paramsObjectToString }
+module.exports = { paramsObjectToString }

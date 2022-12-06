@@ -1,6 +1,6 @@
-import Base from "./base/Base.js"
+const Base = require('./base/Base');
 
-export default class Token extends Base {
+module.exports = class Token extends Base {
     constructor(options) {
         super(options)
     }

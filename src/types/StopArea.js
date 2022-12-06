@@ -1,7 +1,7 @@
-import Client from "../Client.js";
-import StopBase from "./base/StopBase.js"
+const Client = require('../Client');
+const StopBase = require('./base/StopBase');
 
-export default class StopArea extends StopBase {
+module.exports = class StopArea extends StopBase {
     /**
      * The class containing information about a StopArea.
      * 

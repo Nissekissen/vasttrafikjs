@@ -1,7 +1,7 @@
-import RequestBase from "../types/base/RequestBase.js";
-import paramUtils from "./params.js";
+const RequestBase = require('../types/base/RequestBase');
+const paramUtils = require('./params');
 
-export default class RawRequest extends RequestBase {
+module.exports = class RawRequest extends RequestBase {
     /**
      * If you want to send a request that is not based on the regular url.
      * 

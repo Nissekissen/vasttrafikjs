@@ -1,6 +1,6 @@
-import ArrivalDepartureBase from "./base/ArrivalDepartureBase.js";
+const ArrivalDepartureBase = require('./base/ArrivalDepartureBase');
 
-export default class Arrival extends ArrivalDepartureBase {
+module.exports = class Arrival extends ArrivalDepartureBase {
     /**
      * The class containing information about an Arrival.
      * 

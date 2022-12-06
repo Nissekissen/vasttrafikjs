@@ -1,4 +1,4 @@
-export default class Base {
+module.exports = class Base {
     constructor(options) {
         const entries = Object.entries(options)
         for (const option of entries) {

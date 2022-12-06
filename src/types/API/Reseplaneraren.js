@@ -1,7 +1,7 @@
 /**
  * The different options for the Reseplaneraren API.
  */
-export default {
+module.exports = {
     arrivalBoard: 'arrivalBoard',
     departureBoard: 'departureBoard',
     geometry: 'geometry',

@@ -1,7 +1,7 @@
-import Arrival from "./Arrival.js";
-import BoardBase from "./base/BoardBase.js";
+const Arrival = require('./Arrival');
+const BoardBase = require('./base/BoardBase');
 
-export default class ArrivalBoard extends BoardBase {
+module.exports = class ArrivalBoard extends BoardBase {
     /**
      * The class containing information about an ArrivalBoard.
      * 

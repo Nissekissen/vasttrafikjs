@@ -1,6 +1,6 @@
-import Base from "../types/base/Base.js";
+const Base = require('../types/base/Base');
 
-export default class APIResponse extends Base{
+module.exports = class APIResponse extends Base{
     constructor(options) {
         super(options);
     }

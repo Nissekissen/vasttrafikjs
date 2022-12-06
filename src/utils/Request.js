@@ -1,11 +1,7 @@
-import fetch from 'node-fetch';
-import RequestError from '../errors/RequestError.js';
-import RequestBase from '../types/base/RequestBase.js';
-import paramUtils from './params.js'
+const RequestBase = require('../types/base/RequestBase');
+const paramUtils = require('./params');
 
-
-
-export default class Request extends RequestBase {
+module.exports = class Request extends RequestBase {
     /**
      * 
      * @param {string} token Access token 

@@ -1,8 +1,8 @@
-import StopArea from "./StopArea.js";
-import Request from "../utils/Request.js";
-import StopBase from "./base/StopBase.js";
+const StopArea = require('./StopArea');
+const Request = require('../utils/Request');
+const StopBase = require('./base/StopBase');
 
-export default class StopPoint extends StopBase {
+module.exports = class StopPoint extends StopBase {
 
     /**
      * The class containing information about a StopPoint.

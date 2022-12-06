@@ -1,7 +1,7 @@
 /**
  * The different options for the Geography API.
  */
-export default {
+module.exports = {
     CommuterParkingAreas: 'CommuterParkinAreas/',
     CommuterParkingLots: 'CommuterParkingLots/',
     StopAreas: 'StopAreas/',

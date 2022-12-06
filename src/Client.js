@@ -1,12 +1,12 @@
-import fetch from 'node-fetch'
-import APIType from './types/API/APIType.js';
-import Geography from './types/API/Geography.js';
-import StopArea from './types/StopArea.js';
-import StopPoint from './types/StopPoint.js';
-import Token from './types/Token.js';
-import Request from './utils/Request.js';
+const fetch = require('node-fetch');
+const APIType = require('./types/API/APIType.js');
+const Geography = require('./types/API/Geography.js');
+const StopArea = require('./types/StopArea');
+const StopPoint = require('./types/StopPoint');
+const Token = require('./types/Token');
+const Request = require('./utils/Request');
 
-export default class Client {
+module.exports = class Client {
     /**
      * The main class of the library. It is from this class that you can access data about stopPoints and journeys.
      * 

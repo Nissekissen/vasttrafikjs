@@ -1,11 +1,11 @@
-import Base from "./Base.js";
-import Request from "../../utils/Request.js";
-import APIType from "../API/APIType.js";
-import Reseplaneraren from "../API/Reseplaneraren.js";
-import DepartureBoard from "../DepartureBoard.js";
-import ArrivalBoard from "../ArrivalBoard.js";
+const Base = require('./Base');
+const Request = require('../../utils/Request');
+const APIType = require('../API/APIType');
+const Reseplaneraren = require('../API/Reseplaneraren');
+const DepartureBoard = require('../DepartureBoard');
+const ArrivalBoard = require('../ArrivalBoard');
 
-export default class StopBase extends Base {
+module.exports = class StopBase extends Base {
     constructor(client, options) {
         super(options);
         this.client = client;

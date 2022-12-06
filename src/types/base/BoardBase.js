@@ -1,7 +1,7 @@
-import Base from "./Base.js";
+const Base = require('./Base');
 
 
-export default class BoardBase extends Base {
+module.exports = class BoardBase extends Base {
     constructor(client, options) {
         super(options);
         this.client = client;

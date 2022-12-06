@@ -1,7 +1,7 @@
-import fetch from "node-fetch";
-import RequestError from "../../errors/RequestError.js";
+const RequestError = require('../../errors/RequestError')
+const fetch = require('node-fetch');
 
-export default class RequestBase {
+module.exports = class RequestBase {
     /**
      * 
      * @param {Token} token Access token.
