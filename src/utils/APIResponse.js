@@ -1,7 +1,14 @@
-const Base = require('../types/base/Base');
 
-module.exports = class APIResponse extends Base{
-    constructor(options) {
-        super(options);
+
+module.exports = class APIResponse {
+    constructor(response) {
+        
+        this.response = response;
+    }
+    async toJSON() {
+        return await this.response.json();
+    }
+    async toText() {
+        return await this.response.text();
     }
 }

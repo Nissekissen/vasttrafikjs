@@ -1,5 +1,6 @@
 const RequestError = require('../../errors/RequestError')
 const fetch = require('node-fetch');
+const APIResponse = require('../../utils/APIResponse');
 
 module.exports = class RequestBase {
     /**
@@ -28,6 +29,6 @@ module.exports = class RequestBase {
         if (this.response.status != 200) {
             throw new RequestError(await this.response.text());
         }
-        return this.response;
+        return new APIResponse(this.response);
     }
 }

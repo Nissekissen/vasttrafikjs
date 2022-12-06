@@ -28,7 +28,7 @@ module.exports = class Client {
      */
     async generateToken(publicToken, privateToken, deviceId) {
         const url = `https://api.vasttrafik.se/token?grant_type=client_credentials&scope=${deviceId}`;
-        const accessToken = btoa(publicToken + ':' + privateToken) + "="
+        const accessToken = Buffer.from(`${publicToken}:${privateToken}`).toString('base64') + "="
         const response = await fetch(url, { method: 'POST', headers: { "Content-Type": "application/x-www-form-urlencoded", 'Authorization': `Basic ${accessToken}` } })
         const token = new Token(await response.json())
         this.token = token;
@@ -44,7 +44,7 @@ module.exports = class Client {
     async getStopPointById(id) {
         const request = new Request(this.token, 'GET', APIType.Geography, Geography.StopPoints + id, {}, {});
         const response = await request.getResponse();
-        const jsonData = await response.json();
+        const jsonData = await response.toJSON();
 
         return new StopPoint(this, jsonData.stopPoint);
     }
@@ -59,7 +59,7 @@ module.exports = class Client {
     async getStopAreaById(id) {
         const request = new Request(this.token, 'GET', APIType.Geography, Geography.StopAreas + id, {"includeStopPoints": true}, {})
         const response = await request.getResponse();
-        const jsonData = await response.json();
+        const jsonData = await response.toJSON();
         return new StopArea(this, jsonData.stopArea);
     }
     
@@ -73,7 +73,7 @@ module.exports = class Client {
     async getStopAreaByName(name) {
         const request = new Request(this.token, 'GET', APIType.Geography, Geography.StopAreas, {"name": name, "includeStopPoints": true}, {})
         const response = await request.getResponse();
-        const jsonData = await response.json();
+        const jsonData = await response.toJSON();
         return new StopArea(this, jsonData.stopAreas[0]);
     }
 }
